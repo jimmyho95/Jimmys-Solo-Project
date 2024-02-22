@@ -1,1 +1,2 @@
-# Jimmy-s-Solo-Project
+# Jimmy's Solo Project
+
