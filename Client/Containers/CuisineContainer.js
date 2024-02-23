@@ -1,10 +1,30 @@
 import React, {useEffect, useState} from 'react';
-import cuisineBadge from "../Component/cuisineBadge";
+import CuisineBadge from "../Component/CuisineBadge.js"
 
 const CuisineContainer = (props) => {
 
-    return (
-        <p>cuisine container works!</p>
+
+// console.log("cuisineOptions", cuisineOptions)
+
+// for (let i=0;i<props.cuisineOptions.length;i++){
+// optionArray.push(
+//     <div id ="cuisineOptions">
+//     props.cuisineOptions[i]
+//     </div>
+// )
+// }
+
+console.log('logging alla cuisines: ', props.allCuisines)
+
+    return (<div id = "cuisineContainer">
+        {/* {props.allCuisines} */}
+        <CuisineBadge 
+            cuisineType={props.cuisineType} 
+            setCuisineType={props.setCuisineType} 
+            // cuisineOptions = {cuisineOptions}
+            allCuisines = {props.allCuisines}
+        />
+        </div>
     )
 }
 
