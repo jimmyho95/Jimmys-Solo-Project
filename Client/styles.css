@@ -25,7 +25,7 @@ body {
   top: 200px;
   height: 800px;
   width: 1000px;
-  display: flex;
+  /* display: flex; */
   background-color: rgb(248, 227, 166);
 }
 
@@ -38,13 +38,16 @@ body {
   background-color: rgba(149, 179, 229, 0.712);
   background-size: cover;
   position: relative;
-  overflow: wrap;
+  /* overflow: wrap; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #cuisineContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
-  gap: 50px;
+  gap: 10px;
 }
 
 
@@ -59,4 +62,10 @@ body {
   margin: 10px;
   border-radius: 50%;
   box-shadow: 0px 0px 20px 10px gray;
+}
+
+#button {
+  height: 30px;
+  width: 30px;
+background-color: red;
 }

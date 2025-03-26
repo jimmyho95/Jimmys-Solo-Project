@@ -14,7 +14,7 @@ const CuisineContainer = (props) => {
 // )
 // }
 
-console.log('logging alla cuisines: ', props.allCuisines)
+console.log('all cuisines: ', props.allCuisines)
 
     return (<div id = "cuisineContainer">
         {/* {props.allCuisines} */}

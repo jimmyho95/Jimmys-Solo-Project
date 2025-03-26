@@ -5,7 +5,7 @@ const mapController = require('../controllers/mapController');
 const router = express.Router();
 
 router.get('/',
-  mapController.getRestaurants,
+  mapController.getRestaurantsTEXT,
   (req, res) => {
     res.setHeader('Content-Type', 'text/json');
     // console.log('logging all characters: ', res.locals);

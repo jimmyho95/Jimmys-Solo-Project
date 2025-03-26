@@ -9,7 +9,7 @@ app.use(express.json());
 // app.use(app.use(express.static(path.resolve(__dirname, '../client'))));
 
 app.use('/restaurant', mapRouter);
-app.use ('*', (req,res) => res.status(404).send("404", error));
+app.use ('*', (req,res) => res.status(404).send("404"));
 
 app.use((err, req, res, next) => {
     const defaultErr = {

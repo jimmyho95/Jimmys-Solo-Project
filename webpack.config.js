@@ -14,7 +14,7 @@ module.exports = {
       context: ['/restaurant'],
       target: 'http://localhost:3000/'
     }],
-    port: '5000',
+    port: '8080',
     static: {
       directory: path.join(__dirname, 'public')
 },
