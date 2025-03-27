@@ -7,7 +7,7 @@ const CuisineBadge  = (props) => {
     console.log("allcuisines:" + props.allCuisines)
     return (
        <div className = "CuisineBadge" >
-            {/* {props.allCuisines} */}
+            {props.allCuisines}
             <button className = "button" onClick={() => handleClick()}> {props.allCuisines}</button>
             </div>
         );
