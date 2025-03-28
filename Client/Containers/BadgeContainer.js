@@ -9,43 +9,20 @@ const BadgeContainer = (props) => {
     const [allCuisines, setAllCuisines] = useState([]);
     const [cuisineType, setCuisineType] = useState(null);
 
-    useEffect(() => {
+    useEffect((props)=> {
+        if (!props.data || props.data.length === 0) return;
 
-    }, [allCuisines])
+        const uniqueCuisines = new Set();
+        const cuisineOptions = [];
 
-    // useEffect(() => {
-    //     if (!props.data || props.data.length === 0) return; // Prevent errors if data is empty
-    
-    //     // Use a Set to filter out duplicate cuisines
-    //     const uniqueCuisines = new Set();
-    
-    //     const cuisineOptions = props.data.flatMap((restaurant) =>
-    //         restaurant.categories
-    //             .map((category) => category.title)
-    //             .filter((cuisine) => {
-    //                 if (!uniqueCuisines.has(cuisine)) {
-    //                     uniqueCuisines.add(cuisine);
-    //                     return true;
-    //                 }
-    //                 return false;
-    //             })
-    //             .map((cuisine) => <CuisineBadge key={cuisine} cuisineType={cuisine} />)
-    //     );
-    
-    //     setAllCuisines(cuisineOptions);
-    // }, [props.data]); // Depend on props.data to rerun when it updates
-    
-    // useEffect(() => {
-    //     if (!props.data || props.data.length === 0) return; // Prevent errors if data is empty
- 
-    //     const cuisineOptions = props.data.flatMap((restaurant) =>
-    //         restaurant.categories.map((category) => (
-    //             <CuisineBadge key={category.title} cuisineType={category.title} />
-    //         ))
-    //     );
-
-    //     setAllCuisines(cuisineOptions);
-    // }, [props.data]); // Depend on props.data to rerun when it updates
+        props.data.forEach((category) => {
+            if (!uniqueCuisines.includes(category.title)) {
+                uniqueCuisines.add(category.title);
+                cuisineOptions.push(category.title)
+            }
+        })
+        setAllCuisines(cuisineOptions)
+    },[props.data])
 
     return (
         <div id="badgeContainer">
